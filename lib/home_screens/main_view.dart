@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:carousel_pro/carousel_pro.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class MainView extends StatefulWidget {
   @override
@@ -7,9 +9,45 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
+  final _minimumPadding = 5.0;
+  Widget imageCarousel = Container(
+    height: 200,
+    child: Carousel(
+      boxFit: BoxFit.cover,
+      images: [
+        AssetImage('images/image1.jpg'),
+        AssetImage('images/image2.jpg'),
+        AssetImage('images/image3.jpg'),
+        AssetImage('images/image4.jpg'),
+      ],
+      dotSize: 4.0,
+      dotSpacing: 15.0,
+      dotColor: Colors.pink[300],
+      indicatorBgPadding: 5.0,
+      autoplay: true,
+      animationCurve: Curves.fastOutSlowIn,
+      animationDuration: Duration(milliseconds: 3000),
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: ListView(
+        children: <Widget>[
+          imageCarousel,
+          Container(
+            width: _minimumPadding * 5,
+          ),
+          Padding(
+            padding: EdgeInsets.all(_minimumPadding * 2),
+            child: Text(
+              'ADD MILK',
+              style: TextStyle(fontFamily: 'Gotham', fontSize: 15),
+            ),
+          ),
+        ],
+      ),
       appBar: AppBar(
         actions: <Widget>[
           IconButton(

@@ -17,6 +17,8 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  transparent_image: ^1.0.0
+  carousel_pro: ^0.0.13
   fluttertoast: ^3.1.0
   flutter:
     sdk: flutter
@@ -45,6 +47,10 @@ flutter:
   assets:
    - images/splash.jpg
    - images/login_image.jpg
+   - images/image1.jpg
+   - images/image2.jpg
+   - images/image3.jpg
+   - images/image4.jpg
    
 
   # An image asset can refer to one or more resolution-specific "variants", see
