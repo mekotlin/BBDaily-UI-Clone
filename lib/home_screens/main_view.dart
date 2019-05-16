@@ -10,6 +10,10 @@ class MainView extends StatefulWidget {
 
 class _MainViewState extends State<MainView> {
   final _minimumPadding = 5.0;
+  var _currentIndex = 0;
+
+  final List<Widget> _children = [];
+
   Widget imageCarousel = Container(
     height: 200,
     child: Carousel(
@@ -67,6 +71,43 @@ class _MainViewState extends State<MainView> {
           'Daily',
           style: TextStyle(fontFamily: 'Gotham'),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped,
+        currentIndex:
+            _currentIndex, // this will be set when a new tab is tapped
+        items: [
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.home, color: Colors.pink[400]),
+            title: new Text('Home',
+                style: TextStyle(
+                    fontFamily: 'Gotham', fontSize: 10.0, color: Colors.black)),
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.event_note, color: Colors.pink[400]),
+            title: new Text('Subscription',
+                style: TextStyle(
+                    fontFamily: 'Gotham', fontSize: 10.0, color: Colors.black)),
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_wallet, color: Colors.pink[400]),
+              title: Text('My Wallet',
+                  style: TextStyle(
+                      fontFamily: 'Gotham',
+                      fontSize: 10.0,
+                      color: Colors.black))),
+          BottomNavigationBarItem(
+            icon: new Icon(
+              Icons.chat,
+              color: Colors.pink[400],
+            ),
+            title: new Text(
+              'Chat',
+              style: TextStyle(
+                  fontFamily: 'Gotham', fontSize: 10.0, color: Colors.black),
+            ),
+          ),
+        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -164,5 +205,11 @@ class _MainViewState extends State<MainView> {
         ),
       ),
     );
+  }
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
   }
 }
