@@ -37,6 +37,7 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
+      backgroundColor: Colors.grey[200],
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -312,7 +313,258 @@ class _MyHomeState extends State<MyHome> {
                 ],
               ),
             ),
-          
+            Container(
+              padding: EdgeInsets.all(_minpadding * 4),
+              color: Colors.white,
+              child: Center(
+                child: Text(
+                  'DAILY DELIVERY between 5:00AM-7:00AM',
+                  style: TextStyle(fontFamily: 'Gotham', fontSize: 12.0),
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(_minpadding * 2),
+              width: double.infinity,
+              child: Image(
+                image: AssetImage(
+                  'images/subsci.jpg',
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  top: _minpadding * 3,
+                  bottom: _minpadding * 3,
+                  left: _minpadding * 2),
+              child: Text(
+                'SHOP BY CATEGORY',
+                style: myStyle,
+              ),
+            ),
+            SizedBox(
+              
+              child: CustomScrollView(
+                primary: false,
+                slivers: <Widget>[
+                  SliverPadding(
+                    padding: const EdgeInsets.all(20.0),
+                    sliver: SliverGrid.count(
+                      crossAxisSpacing: 05.0,
+                      crossAxisCount: 3,
+                      children: <Widget>[
+                        Card(
+                          elevation: 2.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Image(
+                                height: 80,
+                                image: AssetImage('images/milk1.jpg'),
+                              ),
+                              Text(
+                                "AMUL",
+                                style: myStyleSmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Card(
+                          elevation: 2.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Image(
+                                height: 80,
+                                image: AssetImage('images/milk1.jpg'),
+                              ),
+                              Text(
+                                "AMUL",
+                                style: myStyleSmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Card(
+                          elevation: 2.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Image(
+                                height: 80,
+                                image: AssetImage('images/milk1.jpg'),
+                              ),
+                              Text(
+                                "AMUL",
+                                style: myStyleSmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Card(
+                          elevation: 2.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Image(
+                                height: 80,
+                                image: AssetImage('images/milk1.jpg'),
+                              ),
+                              Text(
+                                "AMUL",
+                                style: myStyleSmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                      Card(
+                          elevation: 2.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Image(
+                                height: 80,
+                                image: AssetImage('images/milk1.jpg'),
+                              ),
+                              Text(
+                                "AMUL",
+                                style: myStyleSmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                      Card(
+                          elevation: 2.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Image(
+                                height: 80,
+                                image: AssetImage('images/milk1.jpg'),
+                              ),
+                              Text(
+                                "AMUL",
+                                style: myStyleSmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                      Card(
+                          elevation: 2.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Image(
+                                height: 80,
+                                image: AssetImage('images/milk1.jpg'),
+                              ),
+                              Text(
+                                "AMUL",
+                                style: myStyleSmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                      Card(
+                          elevation: 2.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Image(
+                                height: 80,
+                                image: AssetImage('images/milk1.jpg'),
+                              ),
+                              Text(
+                                "AMUL",
+                                style: myStyleSmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                      Card(
+                          elevation: 2.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Image(
+                                height: 80,
+                                image: AssetImage('images/milk1.jpg'),
+                              ),
+                              Text(
+                                "AMUL",
+                                style: myStyleSmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                      Card(
+                          elevation: 2.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Image(
+                                height: 80,
+                                image: AssetImage('images/milk1.jpg'),
+                              ),
+                              Text(
+                                "AMUL",
+                                style: myStyleSmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                      Card(
+                          elevation: 2.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Image(
+                                height: 80,
+                                image: AssetImage('images/milk1.jpg'),
+                              ),
+                              Text(
+                                "AMUL",
+                                style: myStyleSmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Card(
+                          elevation: 2.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Image(
+                                height: 80,
+                                image: AssetImage('images/milk1.jpg'),
+                              ),
+                              Text(
+                                "AMUL",
+                                style: myStyleSmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                      
+                      
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
