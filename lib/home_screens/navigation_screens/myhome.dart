@@ -343,9 +343,9 @@ class _MyHomeState extends State<MyHome> {
               ),
             ),
             SizedBox(
-              height: 400,
+              height: 500,
               child: CustomScrollView(
-                primary: true,
+                primary: false,
                 slivers: <Widget>[
                   SliverPadding(
                     padding: const EdgeInsets.all(10.0),
@@ -514,7 +514,277 @@ class _MyHomeState extends State<MyHome> {
                   ),
                 ],
               ),
-            )
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  top: _minpadding * 3,
+                  bottom: _minpadding * 3,
+                  left: _minpadding * 2),
+              child: Text(
+                'SHOP BY CATEGORY',
+                style: myStyle,
+              ),
+            ),
+            SizedBox(
+              height: 326.3,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  Card(
+                    elevation: 2.0,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Image(
+                          width: 180.0,
+                          image: AssetImage('images/banana.jpg'),
+                        ),
+                        Text(
+                          "FRESHO",
+                          style: myStyleSmall,
+                        ),
+                        Text(
+                          "Banana-Robusta",
+                          style: myStyle,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: _minpadding * 3),
+                          child: Text("500 gm", style: myStyleSmall),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(1.0),
+                          child: RaisedButton(
+                            onPressed: () {},
+                            color: Colors.pink,
+                            child: Text(
+                              "SUBSCRIBE @110",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'Gotham',
+                                  fontSize: 10.0),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 3),
+                          child: Text(
+                            'MRP \u20B922.5',
+                            style:
+                                TextStyle(fontFamily: 'Gotham', fontSize: 10.0),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 3),
+                          child: Container(
+                            height: 20,
+                            width: 200,
+                            color: Colors.grey[400],
+                            child: const Center(
+                                child: Text(
+                              'BUY ONCE',
+                              style: TextStyle(
+                                  fontFamily: 'Gotham',
+                                  fontSize: 10,
+                                  color: Colors.white),
+                            )),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Card(
+                    elevation: 2.0,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Image(
+                          width: 180.0,
+                          image: AssetImage('images/dalimb.jpg'),
+                        ),
+                        Text(
+                          "FRESHO",
+                          style: myStyleSmall,
+                        ),
+                        Text(
+                          "Promegranate-peeled",
+                          style: myStyle,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: _minpadding * 3),
+                          child: Text("250 gm", style: myStyleSmall),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(1.0),
+                          child: RaisedButton(
+                            onPressed: () {},
+                            color: Colors.pink,
+                            child: Text(
+                              "SUBSCRIBE @44.8",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'Gotham',
+                                  fontSize: 10.0),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 3),
+                          child: Text(
+                            'MRP \u20B948.9',
+                            style:
+                                TextStyle(fontFamily: 'Gotham', fontSize: 10.0),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 3),
+                          child: Container(
+                            height: 20,
+                            width: 200,
+                            color: Colors.grey[400],
+                            child: const Center(
+                                child: Text(
+                              'BUY ONCE',
+                              style: TextStyle(
+                                  fontFamily: 'Gotham',
+                                  fontSize: 10,
+                                  color: Colors.white),
+                            )),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Card(
+                    elevation: 2.0,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Image(
+                          width: 180.0,
+                          image: AssetImage('images/coconut1.jpg'),
+                        ),
+                        Text(
+                          "FRESHO",
+                          style: myStyleSmall,
+                        ),
+                        Text(
+                          "Tendor-Diced",
+                          style: myStyle,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: _minpadding * 3),
+                          child: Text("150 gm", style: myStyleSmall),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(1.0),
+                          child: RaisedButton(
+                            onPressed: () {},
+                            color: Colors.pink,
+                            child: Text(
+                              "SUBSCRIBE @40.6",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'Gotham',
+                                  fontSize: 10.0),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 3),
+                          child: Text(
+                            'MRP \u20B945',
+                            style:
+                                TextStyle(fontFamily: 'Gotham', fontSize: 10.0),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 3),
+                          child: Container(
+                            height: 20,
+                            width: 200,
+                            color: Colors.grey[400],
+                            child: const Center(
+                                child: Text(
+                              'BUY ONCE',
+                              style: TextStyle(
+                                  fontFamily: 'Gotham',
+                                  fontSize: 10,
+                                  color: Colors.white),
+                            )),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Card(
+                    elevation: 2.0,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Image(
+                          width: 180.0,
+                          image: AssetImage('images/coconut2.jpg'),
+                        ),
+                        Text(
+                          "FRESHO",
+                          style: myStyleSmall,
+                        ),
+                        Text(
+                          "Coconut-Tendor",
+                          style: myStyle,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: _minpadding * 3),
+                          child: Text("1 pc", style: myStyleSmall),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(1.0),
+                          child: RaisedButton(
+                            onPressed: () {},
+                            color: Colors.pink,
+                            child: Text(
+                              "SUBSCRIBE @38.76",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'Gotham',
+                                  fontSize: 10.0),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 3),
+                          child: Text(
+                            'MRP \u20B940.5',
+                            style:
+                                TextStyle(fontFamily: 'Gotham', fontSize: 10.0),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 3),
+                          child: Container(
+                            height: 20,
+                            width: 200,
+                            color: Colors.grey[400],
+                            child: const Center(
+                                child: Text(
+                              'BUY ONCE',
+                              style: TextStyle(
+                                  fontFamily: 'Gotham',
+                                  fontSize: 10,
+                                  color: Colors.white),
+                            )),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
