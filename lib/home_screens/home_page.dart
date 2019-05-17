@@ -22,9 +22,9 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.all(_minPadding * 5),
+                padding: EdgeInsets.all(0),
                 child: Image.asset(
-                  'images/login_image.jpg',
+                  'images/login_page.jpg',
                   fit: BoxFit.fitWidth,
                 ),
               ),

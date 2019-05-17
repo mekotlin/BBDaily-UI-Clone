@@ -1,7 +1,9 @@
+import 'package:dairyapp/home_screens/navigation_screens/chat.dart';
+import 'package:dairyapp/home_screens/navigation_screens/myWallet.dart';
+import 'package:dairyapp/home_screens/navigation_screens/myhome.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:carousel_pro/carousel_pro.dart';
-import 'package:transparent_image/transparent_image.dart';
+import 'navigation_screens/subs_screen.dart';
 
 class MainView extends StatefulWidget {
   @override
@@ -9,48 +11,95 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
-  final _minimumPadding = 5.0;
-  var _currentIndex = 0;
+  ScbsPage _subsPage;
+  MyHome _myHomePage;
+  MyWallet _myWallet;
+  Chats _chats;
 
-  final List<Widget> _children = [];
+  List<Widget> pages;
+  Widget currentPage;
 
-  Widget imageCarousel = Container(
-    height: 200,
-    child: Carousel(
-      boxFit: BoxFit.cover,
-      images: [
-        AssetImage('images/image1.jpg'),
-        AssetImage('images/image2.jpg'),
-        AssetImage('images/image3.jpg'),
-        AssetImage('images/image4.jpg'),
-      ],
-      dotSize: 4.0,
-      dotSpacing: 15.0,
-      dotColor: Colors.pink[300],
-      indicatorBgPadding: 5.0,
-      autoplay: true,
-      animationCurve: Curves.fastOutSlowIn,
-      animationDuration: Duration(milliseconds: 3000),
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontFamily: 'Gotham', fontSize: 13);
+
+  @override
+  void initState() {
+    _subsPage = ScbsPage();
+    _myHomePage = MyHome();
+    _myWallet = MyWallet();
+    _chats = Chats();
+
+    pages = [_myHomePage, _subsPage, _myWallet, _chats];
+    currentPage = _myHomePage;
+    super.initState();
+  }
+
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Home',
     ),
-  );
+    Text(
+      'Index 1: Subscription',
+    ),
+    Text(
+      'Index 2: My wallet',
+    ),
+    Text(
+      'Index 2: Chat',
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: <Widget>[
-          imageCarousel,
-          Container(
-            width: _minimumPadding * 5,
+      body: currentPage,
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text(
+              'Home',
+              style: optionStyle,
+            ),
           ),
-          Padding(
-            padding: EdgeInsets.all(_minimumPadding * 2),
-            child: Text(
-              'ADD MILK',
-              style: TextStyle(fontFamily: 'Gotham', fontSize: 15),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.event_note),
+            title: Text(
+              'Subscription',
+              style: optionStyle,
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_balance_wallet),
+            title: Text(
+              'My wallet',
+              style: optionStyle,
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat),
+            title: Text(
+              'Chat',
+              style: optionStyle,
             ),
           ),
         ],
+        currentIndex: _selectedIndex,
+        fixedColor: Colors.pink,
+        onTap: (int index) {
+          setState(() {
+            _selectedIndex = index;
+            currentPage = pages[index];
+          });
+        },
+        type: BottomNavigationBarType.fixed,
       ),
       appBar: AppBar(
         actions: <Widget>[
@@ -71,43 +120,6 @@ class _MainViewState extends State<MainView> {
           'Daily',
           style: TextStyle(fontFamily: 'Gotham'),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: onTabTapped,
-        currentIndex:
-            _currentIndex, // this will be set when a new tab is tapped
-        items: [
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.home, color: Colors.pink[400]),
-            title: new Text('Home',
-                style: TextStyle(
-                    fontFamily: 'Gotham', fontSize: 10.0, color: Colors.black)),
-          ),
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.event_note, color: Colors.pink[400]),
-            title: new Text('Subscription',
-                style: TextStyle(
-                    fontFamily: 'Gotham', fontSize: 10.0, color: Colors.black)),
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.account_balance_wallet, color: Colors.pink[400]),
-              title: Text('My Wallet',
-                  style: TextStyle(
-                      fontFamily: 'Gotham',
-                      fontSize: 10.0,
-                      color: Colors.black))),
-          BottomNavigationBarItem(
-            icon: new Icon(
-              Icons.chat,
-              color: Colors.pink[400],
-            ),
-            title: new Text(
-              'Chat',
-              style: TextStyle(
-                  fontFamily: 'Gotham', fontSize: 10.0, color: Colors.black),
-            ),
-          ),
-        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -205,11 +217,5 @@ class _MainViewState extends State<MainView> {
         ),
       ),
     );
-  }
-
-  void onTabTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
   }
 }

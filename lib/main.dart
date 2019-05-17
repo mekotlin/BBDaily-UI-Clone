@@ -2,6 +2,7 @@ import 'package:dairyapp/home_screens/main_view.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'home_screens/home_page.dart';
+import 'home_screens/navigation_screens/myhome.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -10,8 +11,12 @@ void main() {
     theme: ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.pink,
+        canvasColor: Colors.white,
         accentColor: Colors.red),
-    routes: <String, WidgetBuilder>{'/a': (BuildContext context) => MainView()},
+    routes: <String, WidgetBuilder>{
+      '/a': (BuildContext context) => MainView(),
+      '/b': (BuildContext context) => MyHome(),
+      },
   ));
 }
 
