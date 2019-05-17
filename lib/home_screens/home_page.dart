@@ -8,8 +8,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var _formKey = GlobalKey<FormState>();
   final _minPadding = 5.0;
-  TextEditingController userNameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController userNameController = TextEditingController(text: 'admin');
+  TextEditingController passwordController = TextEditingController(text: 'admin');
 
   @override
   Widget build(BuildContext context) {
