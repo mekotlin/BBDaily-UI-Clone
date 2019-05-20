@@ -173,15 +173,24 @@ class _MyWalletState extends State<MyWallet> {
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: RaisedButton(
-              onPressed: () {},
-              color: Colors.pink,
-              child: Text(
-                "ADD MONEY",
-                style: TextStyle(
-                    color: Colors.white, fontFamily: 'Gotham', fontSize: 15.0),
+          SizedBox(
+            width: 240,
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: RaisedButton(
+                onPressed: () {},
+                color: Colors.pink,
+                elevation: 10,
+                shape: new RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(7),
+                ),
+                child: Text(
+                  "Add Money",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Gotham',
+                      fontSize: 15.0),
+                ),
               ),
             ),
           ),
@@ -192,19 +201,24 @@ class _MyWalletState extends State<MyWallet> {
               style: textStyle,
             ),
           ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: RaisedButton(
-              onPressed: () {},
-              color: Colors.white,
-              elevation: 20,
-              shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(7),
-              ),
-              child: Text(
-                "Cash Recharge",
-                style: TextStyle(
-                    color: Colors.black, fontFamily: 'Gotham', fontSize: 15.0),
+          SizedBox(
+            width: 240,
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: RaisedButton(
+                onPressed: () {},
+                color: Colors.white,
+                elevation: 20,
+                shape: new RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(7),
+                ),
+                child: Text(
+                  "Cash Recharge",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'Gotham',
+                      fontSize: 15.0),
+                ),
               ),
             ),
           ),
