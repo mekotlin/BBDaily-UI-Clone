@@ -8,8 +8,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var _formKey = GlobalKey<FormState>();
   final _minPadding = 5.0;
-  TextEditingController userNameController = TextEditingController(text: 'admin');
-  TextEditingController passwordController = TextEditingController(text: 'admin');
+  TextEditingController userNameController =
+      TextEditingController(text: 'admin');
+  TextEditingController passwordController =
+      TextEditingController(text: 'admin');
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     setState(() {
                       if (_formKey.currentState.validate()) {
-                        Navigator.of(context).pushNamed('/a');
+                        Navigator.of(context).pushReplacementNamed('/a');
                       }
                     });
                   },

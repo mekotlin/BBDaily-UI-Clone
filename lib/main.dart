@@ -1,5 +1,6 @@
 import 'package:dairyapp/home_screens/main_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as prefix0;
 import 'dart:async';
 import 'home_screens/home_page.dart';
 import 'home_screens/navigation_screens/myhome.dart';
@@ -16,7 +17,8 @@ void main() {
     routes: <String, WidgetBuilder>{
       '/a': (BuildContext context) => MainView(),
       '/b': (BuildContext context) => MyHome(),
-      },
+      '/homePage': (BuildContext context) => HomePage(),
+    },
   ));
 }
 
@@ -37,8 +39,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _loadUI() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => HomePage()));
+    //Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+    Navigator.of(context).pushReplacementNamed('/homePage');
   }
 
   @override
