@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'home_screens/home_page.dart';
 import 'home_screens/navigation_screens/myhome.dart';
+import 'home_screens/drawer_items/my_orders.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -17,6 +18,7 @@ void main() {
       '/a': (BuildContext context) => MainView(),
       '/b': (BuildContext context) => MyHome(),
       '/homePage': (BuildContext context) => HomePage(),
+      '/myOrders': (BuildContext context) => MyOrders(),
     },
   ));
 }

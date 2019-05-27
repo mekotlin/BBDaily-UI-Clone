@@ -13,7 +13,7 @@ class _MyWalletState extends State<MyWallet> {
       fontSize: 15,
       color: Colors.grey,
       fontWeight: FontWeight.normal);
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -21,8 +21,8 @@ class _MainViewState extends State<MainView> {
   Widget currentPage;
 
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontFamily: 'Gotham', fontSize: 13);
+  static const TextStyle optionStyle = TextStyle(
+      fontFamily: 'Gotham', fontSize: 13, fontWeight: FontWeight.normal);
 
   @override
   void initState() {
@@ -175,6 +175,16 @@ class _MainViewState extends State<MainView> {
               leading: Icon(Icons.notifications_active),
               onTap: () => Navigator.of(context).pop(),
             ),
+            ListTile(
+                title: Text(
+                  'My Order',
+                  style: TextStyle(fontFamily: 'Gotham', fontSize: 15.0),
+                ),
+                leading: Icon(Icons.beenhere),
+                onTap: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).pushReplacementNamed('/myOrders');
+                }),
             ListTile(
               title: Text(
                 'Your Story',
