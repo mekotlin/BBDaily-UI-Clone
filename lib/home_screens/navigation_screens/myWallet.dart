@@ -17,7 +17,9 @@ class _MyWalletState extends State<MyWallet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+        body: Container(
+            child: SingleChildScrollView(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
@@ -224,6 +226,6 @@ class _MyWalletState extends State<MyWallet> {
           ),
         ],
       ),
-    );
+    )));
   }
 }

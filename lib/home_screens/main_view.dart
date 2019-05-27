@@ -1,6 +1,7 @@
 import 'package:dairyapp/home_screens/navigation_screens/chat.dart';
 import 'package:dairyapp/home_screens/navigation_screens/myWallet.dart';
 import 'package:dairyapp/home_screens/navigation_screens/myhome.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'navigation_screens/subs_screen.dart';
@@ -103,6 +104,15 @@ class _MainViewState extends State<MainView> {
       ),
       appBar: AppBar(
         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              showSearch(
+                context: context,
+                delegate: DataSearch(),
+              );
+            },
+          ),
           IconButton(
               icon: Icon(Icons.account_circle),
               onPressed: () {
@@ -216,6 +226,81 @@ class _MainViewState extends State<MainView> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class DataSearch extends SearchDelegate<String> {
+  final items = [
+    'Milk',
+    'Fruits',
+    'Vegitable',
+    'Bakery Products',
+    'Beverages',
+    'Beauty & Hygiene',
+    'Pet Care',
+    'Breakfast & Snacks',
+    'Pooja Needs',
+    'Food Grains Oils & Masalas',
+    'Baby Care'
+  ];
+  final recentItems = ['Milk', 'Fruits', 'Vegitable'];
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: Icon(Icons.clear),
+        onPressed: () {
+          query = "";
+        },
+      )
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      icon: AnimatedIcon(
+        icon: AnimatedIcons.menu_arrow,
+        progress: transitionAnimation,
+      ),
+      onPressed: () {
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    return null;
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    final suggetionList = query.isEmpty
+        ? recentItems
+        : items.where((p) => p.startsWith(query)).toList();
+
+    return ListView.builder(
+      itemBuilder: (context, index) => ListTile(
+            onTap: () {
+              showResults(context);
+            },
+            leading: Icon(Icons.settings_input_svideo),
+            title: RichText(
+              text: TextSpan(
+                  text: suggetionList[index].substring(0, query.length),
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                  children: [
+                    TextSpan(
+                        text: suggetionList[index].substring(query.length),
+                        style: TextStyle(color: Colors.grey))
+                  ]),
+            ),
+          ),
+      itemCount: suggetionList.length,
     );
   }
 }

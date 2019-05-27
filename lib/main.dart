@@ -1,6 +1,5 @@
 import 'package:dairyapp/home_screens/main_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as prefix0;
 import 'dart:async';
 import 'home_screens/home_page.dart';
 import 'home_screens/navigation_screens/myhome.dart';
